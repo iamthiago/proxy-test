@@ -16,10 +16,8 @@ public class CustomInvocationHandler implements InvocationHandler {
 
     @Override
     public Object invoke(Object proxy, Method method, Object[] params) throws Throwable {
-        long a = System.currentTimeMillis();
-        Object result = method.invoke(target, params);
-        System.out.println("total time taken " + (System.currentTimeMillis() - a));
-        return result;
+        System.out.println("test my custom invocation handler");
+        return method.invoke(target, params);
     }
 
     public Object getTarget() {
